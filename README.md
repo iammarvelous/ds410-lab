@@ -9,7 +9,7 @@ C = FOREACH B GENERATE group, SUM(A.retweet);
 DUMP C;
 ```
 
-## Lab 2: Scala and Hashtag counting
+## Lab 2: Spark-shell basics & HDFS
 
 ### HDFS command introduction
 ```
