@@ -41,3 +41,4 @@ writer.close()
 ### References
 * [HDFS document](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html)
 * [Scala regular expression tutorial](https://www.tutorialspoint.com/scala/scala_regular_expressions.htm)
+* [sbt documentation](http://www.scala-sbt.org/0.13/docs/index.html)
