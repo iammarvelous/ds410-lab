@@ -42,6 +42,12 @@ See in demo.
 
 # Lab 4: Triangle count
 
+* NodeID: ID of threads
+* NodeUserID: user ID of thread initiator
+* CommentUserID: user ID of a person who posts one or more "reply post"(s) to the thread
+* Count: the number of reply posts by the CommentUserID
+* TermNodeID: The name of subforums in which the thread occurs.
+
 ```
 import scala.util.Try
 import java.io.PrintWriter
