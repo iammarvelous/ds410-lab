@@ -202,7 +202,8 @@ val k = new Kmeans(3, 4)
 k.run(samples, 100)
 val centers = k.centers
 ```
-
+# Lab 7: Document Clustering (pubmed)
+See in [lab7](lab7/) 
 
 ### References
 * [HDFS document](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html)
