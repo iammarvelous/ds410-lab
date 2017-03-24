@@ -37,10 +37,10 @@ val writer = new PrintWriter(new File("output.txt"))
 top10.foreach(x => writer.write(x._1 + "\t" + x._2 + "\n"))
 writer.close()
 ```
-# Lab 3: Hashtag count
+## Lab 3: Hashtag count
 See in demo.
 
-# Lab 4: Triangle count
+## Lab 4: Triangle count
 
 * NodeID: ID of threads
 * NodeUserID: user ID of thread initiator
@@ -73,7 +73,7 @@ val result = num_triangle / (num_nodes * (num_nodes - 1) * (num_nodes - 2) / 6.0
 print(result, num_nodes, num_triangle)
 ```
 
-# Lab 5: Kmeans Step
+## Lab 5: Kmeans Step
 
 ```
 import scala.util.Try
@@ -130,7 +130,7 @@ for (i <- 0 to nb_cluster-1) {
     }
 }
 ```
-# Lab 6: Kmeans
+## Lab 6: Kmeans
 
 ```
 import scala.util.Try
@@ -202,7 +202,7 @@ val k = new Kmeans(3, 4)
 k.run(samples, 100)
 val centers = k.centers
 ```
-# Lab 7: Document Clustering (pubmed)
+## Lab 7: Document Clustering (pubmed)
 See in [lab7](lab7/) 
 
 ### References
