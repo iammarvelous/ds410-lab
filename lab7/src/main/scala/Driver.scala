@@ -8,6 +8,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import scala.collection.JavaConversions
 import scala.io.Source
+import org.apache.spark.storage.StorageLevel
 
 object Demo {
 
@@ -21,7 +22,7 @@ object Demo {
     private final val HDFS_SITE_CONFIG_PATH = new Path("/usr/hdp/current/hadoop-client/conf/hdfs-site.xml")
     final val conf = new SparkConf().setMaster(SPARK_MASTER).setAppName(APPLICATION_NAME)
     final val sc = new SparkContext(conf)
-    sc.setLogLevel("WARN")    
+    sc.setLogLevel("WARN")
 
     def main(args: Array[String]): Unit = {
         // Configure HDFS
@@ -39,7 +40,7 @@ object Demo {
         if(args(0) == "kmeans") {
             val lines = sc.textFile(FileSystem.get(configuration).getUri + DATASET_PATH_PUBMED)
             val papers = Helper.parseData(lines)
-            val featureVectors = FeatureExtraction.constructFeatureVectorsFromPapers(papers).cache()
+            val featureVectors = FeatureExtraction.constructFeatureVectorsFromPapers(papers).persist(StorageLevel.MEMORY_AND_DISK_SER) //.cache()
             val start = System.nanoTime
             val clustersOfPapers = new KMeansClustering(3, 100).clusterPapers(featureVectors)
             val end = System.nanoTime

@@ -108,9 +108,9 @@ val samples  = lines.map(line => line.split(",").slice(0,4).map(_.toDouble)).zip
 
 // one update:
 
-// Complete this line: 
+// Complete this line:
 // Expected output structure: (sampleID, (clusterID, Distance(sample, cluster))
-// val dist = 
+// val dist =
 
 
 val labels = dist.reduceByKey((a, b) => (if (a._2 > b._2) b; else a)).map(t => (t._1, t._2._1))
@@ -203,10 +203,14 @@ k.run(samples, 100)
 val centers = k.centers
 ```
 ## Lab 7: Document Clustering (pubmed)
-See in [lab7](lab7/) 
+See in [lab7](lab7/)
 
 ### References
 * [HDFS document](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html)
 * [Scala regular expression tutorial](https://www.tutorialspoint.com/scala/scala_regular_expressions.htm)
 * [sbt documentation](http://www.scala-sbt.org/0.13/docs/index.html)
 * [Feature Extraction and Transformation](https://spark.apache.org/docs/latest/mllib-feature-extraction.html)
+* [Tuning resource allocation](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/)
+* [YARN models](https://blog.cloudera.com/blog/2014/05/apache-spark-resource-management-and-yarn-app-models/)
+* [yarn default configuration](https://hadoop.apache.org/docs/r2.7.2/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
+
